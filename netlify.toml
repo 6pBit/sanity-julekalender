@@ -1,0 +1,8 @@
+[build]
+  base = "apps/kokeboka"
+  command = "pnpm run build"
+  publish = "dist/client"
+[dev]
+  base = "apps/kokeboka"
+  command = "pnpm run dev"
+  port = 3000
