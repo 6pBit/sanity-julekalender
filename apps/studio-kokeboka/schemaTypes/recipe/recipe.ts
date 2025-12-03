@@ -1,36 +1,29 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity'
 
-export default defineType({
-    name: "recipe",
-    title: "Recipe",
-    type: "object",
+export const recipe = defineType({
+    name: 'recipe',
+    title: 'Recipe',
+    type: 'document',
     fields: [
         defineField({
-            name: "name",
-            title: "Name",
-            type: "string",
+            name: 'title',
+            title: 'Title',
+            type: 'string',
         }),
         defineField({
-            name: "description",
-            title: "Description",
-            type: "text",
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 96,
+            },
         }),
         defineField({
-            name: "ingridients",
-            title: "Ingridients",
-            type: "array",
-            of: [{ type: "ingridient" }],
-        }),
-        defineField({
-            name: "instructions",
-            title: "Instructions",
-            type: "array",
-            of: [{ type: "block" }],
-        }),
-        defineField({
-            name: "image",
-            title: "Image",
-            type: "image",
+            name: 'ingredients',
+            title: 'Ingredients',
+            type: 'array',
+            of: [{ type: 'ingredient' }],
         }),
     ],
-}); 
+})
