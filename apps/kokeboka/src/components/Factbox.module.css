@@ -1,0 +1,21 @@
+.factbox {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-md);
+    color: #1a1a1a;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.text {
+    margin: 0;
+    line-height: 1.6;
+    color: #2d3436;
+}

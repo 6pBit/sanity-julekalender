@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RecipesRecipeIdRouteImport } from './routes/recipes/$recipeId'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoMcpTodosRouteImport } from './routes/demo/mcp-todos'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
@@ -31,6 +32,11 @@ const McpRoute = McpRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecipesRecipeIdRoute = RecipesRecipeIdRouteImport.update({
+  id: '/recipes/$recipeId',
+  path: '/recipes/$recipeId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/mcp': typeof McpRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/recipes/$recipeId': typeof RecipesRecipeIdRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/mcp': typeof McpRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/recipes/$recipeId': typeof RecipesRecipeIdRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/mcp': typeof McpRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/recipes/$recipeId': typeof RecipesRecipeIdRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
+    | '/recipes/$recipeId'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -157,6 +167,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
+    | '/recipes/$recipeId'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -172,6 +183,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
+    | '/recipes/$recipeId'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -188,6 +200,7 @@ export interface RootRouteChildren {
   McpRoute: typeof McpRoute
   DemoMcpTodosRoute: typeof DemoMcpTodosRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  RecipesRecipeIdRoute: typeof RecipesRecipeIdRoute
   DemoApiMcpTodosRoute: typeof DemoApiMcpTodosRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
   DemoApiTqTodosRoute: typeof DemoApiTqTodosRoute
@@ -213,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recipes/$recipeId': {
+      id: '/recipes/$recipeId'
+      path: '/recipes/$recipeId'
+      fullPath: '/recipes/$recipeId'
+      preLoaderRoute: typeof RecipesRecipeIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/tanstack-query': {
@@ -300,6 +320,7 @@ const rootRouteChildren: RootRouteChildren = {
   McpRoute: McpRoute,
   DemoMcpTodosRoute: DemoMcpTodosRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  RecipesRecipeIdRoute: RecipesRecipeIdRoute,
   DemoApiMcpTodosRoute: DemoApiMcpTodosRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
   DemoApiTqTodosRoute: DemoApiTqTodosRoute,
