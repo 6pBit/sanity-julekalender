@@ -36,7 +36,40 @@ export const recipe = defineType({
             name: 'ingredients',
             title: 'Ingredients',
             type: 'array',
+            deprecated: {
+                reason: 'Use the ingredientList field instead',
+            },
             of: [{ type: 'ingredient' }],
+            readOnly: true,
+        }),
+        defineField({
+            name: 'ingredientList',
+            title: 'Ingredients list',
+            type: 'array',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'amount',
+                            title: 'Amount',
+                            type: 'string',
+                        },
+                        {
+                            name: 'ingredient',
+                            title: 'Ingredient',
+                            type: 'reference',
+                            to: [{ type: 'ingredient' }],
+                        },
+                    ],
+                    preview: {
+                        select: {
+                            title: 'ingredient.name',
+                            subtitle: 'amount',
+                        },
+                    },
+                },
+            ],
         }),
         defineField({
             name: 'instructions',

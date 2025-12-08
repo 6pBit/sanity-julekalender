@@ -2,9 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useRecipe } from '../../data/useRecipe'
 import { PortableText } from '@portabletext/react'
 import { Factbox } from '../../components/Factbox'
-
+import { IngredientList } from '../../components/IngredientList'
 import { urlFor } from '../../sanity/image'
-
 import styles from './recipe.module.css'
 
 export const Route = createFileRoute('/recipes/$recipeId')({
@@ -38,6 +37,11 @@ function RecipeComponent() {
             )}
             <h1 className={styles.title}>{recipe.title}</h1>
             <p className={styles.description}>{recipe.description}</p>
+
+            {recipe.ingredientList && (
+                <IngredientList ingredients={recipe.ingredientList} />
+            )}
+
             {recipe.body && (
                 <div className={styles.content}>
                     <PortableText value={recipe.body} components={components} />

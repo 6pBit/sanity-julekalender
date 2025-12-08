@@ -4,7 +4,8 @@
     "scripts": {
         "dev:client": "cd apps/kokeboka && pnpm dev",
         "dev:studio": "pnpm --filter studio-kokeboka dev",
-        "deploy:studio": "cd apps/studio-kokeboka && pnpm deploy",
+        "build:client": "cd apps/kokeboka && pnpm build",
+        "deploy:studio": "pnpm --filter studio-kokeboka run deploy",
         "dev": "pnpm -r dev",
         "build": "pnpm -r build",
         "lint": "pnpm -r lint"
