@@ -1,0 +1,27 @@
+{"_id":"ingredientCategory-meat","_type":"ingredientCategory","name":"Meat"}
+{"_id":"ingredientCategory-vegetable","_type":"ingredientCategory","name":"Vegetable"}
+{"_id":"ingredientCategory-grain","_type":"ingredientCategory","name":"Grain"}
+{"_id":"ingredientCategory-spice","_type":"ingredientCategory","name":"Spice"}
+{"_id":"ingredientCategory-staple","_type":"ingredientCategory","name":"Staple"}
+{"_id":"ingredientCategory-dairy","_type":"ingredientCategory","name":"Dairy"}
+{"_id":"ingredientCategory-other","_type":"ingredientCategory","name":"Other"}
+{"_id":"ingredient-kylling-filet","_type":"ingredient","name":"Kylling filet","mainGroup":"meat","category":[{"_type":"reference","_ref":"ingredientCategory-meat"}]}
+{"_id":"ingredient-brokkoli","_type":"ingredient","name":"Brokkoli","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-ris","_type":"ingredient","name":"Ris","mainGroup":"grain","category":[{"_type":"reference","_ref":"ingredientCategory-grain"}]}
+{"_id":"ingredient-kyllingl-r","_type":"ingredient","name":"Kyllinglår","mainGroup":"meat","category":[{"_type":"reference","_ref":"ingredientCategory-meat"}]}
+{"_id":"ingredient-soyasaus","_type":"ingredient","name":"Soyasaus","mainGroup":"staple","category":[{"_type":"reference","_ref":"ingredientCategory-staple"}]}
+{"_id":"ingredient-ris-eddik","_type":"ingredient","name":"Ris-eddik","mainGroup":"staple","category":[{"_type":"reference","_ref":"ingredientCategory-staple"}]}
+{"_id":"ingredient-gul-l-k","_type":"ingredient","name":"Gul løk","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-hvitl-k","_type":"ingredient","name":"Hvitløk","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-laurb-rblad","_type":"ingredient","name":"Laurbærblad","mainGroup":"spice","category":[{"_type":"reference","_ref":"ingredientCategory-spice"}]}
+{"_id":"ingredient-pepper","_type":"ingredient","name":"Pepper","mainGroup":"spice","category":[{"_type":"reference","_ref":"ingredientCategory-spice"}]}
+{"_id":"ingredient-sukker","_type":"ingredient","name":"Sukker","mainGroup":"staple","category":[{"_type":"reference","_ref":"ingredientCategory-staple"}]}
+{"_id":"ingredient-jasmin-ris","_type":"ingredient","name":"Jasmin ris","mainGroup":"grain","category":[{"_type":"reference","_ref":"ingredientCategory-grain"}]}
+{"_id":"ingredient-v-rl-k","_type":"ingredient","name":"Vårløk","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-kokkos-olje","_type":"ingredient","name":"Kokkos olje","mainGroup":"staple","category":[{"_type":"reference","_ref":"ingredientCategory-staple"}]}
+{"_id":"ingredient-hvirl-k-for-risen","_type":"ingredient","name":"Hvirløk for risen","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-fish-sauce","_type":"ingredient","name":"Fish sauce","mainGroup":"staple","category":[{"_type":"reference","_ref":"ingredientCategory-staple"}]}
+{"_id":"ingredient-agurk","_type":"ingredient","name":"Agurk","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-r-dl-k","_type":"ingredient","name":"Rødløk","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-ingef-r","_type":"ingredient","name":"Ingefær","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
+{"_id":"ingredient-chili-valgritt","_type":"ingredient","name":"Chili valgritt","mainGroup":"vegetable","category":[{"_type":"reference","_ref":"ingredientCategory-vegetable"}]}
