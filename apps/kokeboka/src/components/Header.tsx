@@ -1,5 +1,6 @@
+
 import { Link } from '@tanstack/react-router'
-import { Home } from 'lucide-react'
+import { Home, BookOpen } from 'lucide-react'
 
 import styles from './Header.module.css'
 
@@ -23,6 +24,16 @@ export default function Header() {
           >
             <Home size={20} />
             <span>Home</span>
+          </Link>
+          <Link
+            to="/pages"
+            className={styles.navLink}
+            activeProps={{
+              className: styles.activeNavLink
+            }}
+          >
+            <BookOpen size={20} />
+            <span>Blogg</span>
           </Link>
         </nav>
       </div>
