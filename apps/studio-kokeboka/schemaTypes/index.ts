@@ -6,6 +6,9 @@ import { ingredientType } from './recipe/ingredientType'
 import { dietaryTag } from './recipe/dietaryTag'
 import { allergen } from './recipe/allergen'
 import { factbox } from './factbox'
+import { typeOfRecipe } from './recipe/typeOfRecipe'
+import { internaltag } from './internaltag'
+import { instructions } from './instructions'
 
 export const schemaTypes = [
     recipe,
@@ -15,5 +18,8 @@ export const schemaTypes = [
     ingredientType,
     dietaryTag,
     allergen,
-    factbox
+    factbox,
+    typeOfRecipe,
+    internaltag,
+    instructions,
 ]

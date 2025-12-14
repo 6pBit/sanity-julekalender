@@ -3,9 +3,9 @@ import RECIPES_QUERY from "./recipies"
 import { useQuery } from "@tanstack/react-query"
 
 
-export const useRecipies = () => {
+export const useRecipies = (type?: string) => {
     return useQuery({
-        queryKey: ["recipies"],
-        queryFn: async () => client.fetch(RECIPES_QUERY),
+        queryKey: ["recipies", type],
+        queryFn: async () => client.fetch(RECIPES_QUERY, { type: type ?? null }),
     })
 }

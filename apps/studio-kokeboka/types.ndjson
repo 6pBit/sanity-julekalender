@@ -1,0 +1,9 @@
+{"_id": "type-breakfast", "_type": "typeOfRecipe", "title": "Frokost", "value": {"_type": "slug", "current": "frokost"}}
+{"_id": "type-dinner", "_type": "typeOfRecipe", "title": "Middag", "value": {"_type": "slug", "current": "middag"}}
+{"_id": "type-lunch", "_type": "typeOfRecipe", "title": "Lunsj", "value": {"_type": "slug", "current": "lunsj"}}
+{"_id": "type-snack", "_type": "typeOfRecipe", "title": "Mellommåltid", "value": {"_type": "slug", "current": "mellommåltid"}}
+{"_id": "type-hot-drink", "_type": "typeOfRecipe", "title": "Varmdrikke", "value": {"_type": "slug", "current": "varmdrikke"}}
+{"_id": "type-cold-drink", "_type": "typeOfRecipe", "title": "Kalddrikke", "value": {"_type": "slug", "current": "kalddrikke"}}
+{"_id": "type-dessert", "_type": "typeOfRecipe", "title": "Dessert", "value": {"_type": "slug", "current": "dessert"}}
+{"_id": "type-baked-goods", "_type": "typeOfRecipe", "title": "Bakevare", "value": {"_type": "slug", "current": "bakevare"}}
+{"_id": "type-other", "_type": "typeOfRecipe", "title": "Annet", "value": {"_type": "slug", "current": "annet"}}

@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { IngredientDifficultyInput } from '../../components/IngredientDifficultyInput'
 
 export const recipe = defineType({
     name: 'recipe',
@@ -25,6 +26,18 @@ export const recipe = defineType({
             type: 'text',
         }),
         defineField({
+            name: 'internaltag',
+            title: 'Internal Tags',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'internaltag' }] }],
+        }),
+        defineField({
+            name: 'typeOfRecipe',
+            title: 'Type of Recipe',
+            type: 'reference',
+            to: [{ type: 'typeOfRecipe' }]
+        }),
+        defineField({
             name: 'mainImage',
             title: 'Main image',
             type: 'image',
@@ -33,19 +46,21 @@ export const recipe = defineType({
             },
         }),
         defineField({
-            name: 'ingredients',
-            title: 'Ingredients',
-            type: 'array',
-            deprecated: {
-                reason: 'Use the ingredientList field instead',
-            },
-            of: [{ type: 'ingredient' }],
+            name: 'difficulty',
+            title: 'Difficulty',
+            type: 'string',
             readOnly: true,
+            hidden: true, // We hide this field as the UI is handled by ingredientList
+            initialValue: 'Easy',
         }),
         defineField({
             name: 'ingredientList',
             title: 'Ingredients list',
             type: 'array',
+            components: {
+                // We attach the custom component here for the "connected" look
+                input: IngredientDifficultyInput
+            },
             of: [
                 {
                     type: 'object',
@@ -72,18 +87,14 @@ export const recipe = defineType({
             ],
         }),
         defineField({
-            name: 'instructions',
-            title: 'Instructions',
-            type: 'array',
-            of: [{ type: 'block' }],
-        }),
-        defineField({
             name: 'body',
             title: 'Body',
             type: 'array',
             of: [
                 { type: 'block' },
-                { type: 'factbox' }
+                { type: 'factbox' },
+                { type: 'image' },
+                { type: 'instructions' }
             ],
         }),
 

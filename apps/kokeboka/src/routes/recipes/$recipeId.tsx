@@ -23,6 +23,19 @@ function RecipeComponent() {
     const components = {
         types: {
             factbox: Factbox,
+            image: ({ value }: any) => (
+                <div className={styles.contentImage}>
+                    {value.asset && (
+                        <img src={urlFor(value).width(800).url()} alt={value.alt || ''} />
+                    )}
+                </div>
+            ),
+            instructions: ({ value }: any) => (
+                <div className={styles.instructionsBlock}>
+                    <h2>Instruksjoner</h2>
+                    <PortableText value={value.steps} />
+                </div>
+            )
         },
     }
 
@@ -47,13 +60,6 @@ function RecipeComponent() {
                     <PortableText value={recipe.body} components={components} />
                 </div>
             )}
-            {recipe.instructions && (
-                <div className={styles.content}>
-                    <h2>Instruksjoner</h2>
-                    <PortableText value={recipe.instructions} />
-                </div>
-            )}
-
         </div>
     )
 }
