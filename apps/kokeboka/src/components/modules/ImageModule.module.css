@@ -1,0 +1,23 @@
+.imageModule {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.feature {
+    max-width: 100%;
+    padding: 0;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    text-align: center;
+    color: #666;
+    margin-top: 1rem;
+    font-style: italic;
+}

@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PagesIndexRouteImport } from './routes/pages/index'
 import { Route as RecipesRecipeIdRouteImport } from './routes/recipes/$recipeId'
+import { Route as PagesSlugRouteImport } from './routes/pages/$slug'
 import { Route as IngredientsIngredientIdRouteImport } from './routes/ingredients/$ingredientId'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoMcpTodosRouteImport } from './routes/demo/mcp-todos'
@@ -35,9 +37,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PagesIndexRoute = PagesIndexRouteImport.update({
+  id: '/pages/',
+  path: '/pages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecipesRecipeIdRoute = RecipesRecipeIdRouteImport.update({
   id: '/recipes/$recipeId',
   path: '/recipes/$recipeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagesSlugRoute = PagesSlugRouteImport.update({
+  id: '/pages/$slug',
+  path: '/pages/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IngredientsIngredientIdRoute = IngredientsIngredientIdRouteImport.update({
@@ -107,7 +119,9 @@ export interface FileRoutesByFullPath {
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/ingredients/$ingredientId': typeof IngredientsIngredientIdRoute
+  '/pages/$slug': typeof PagesSlugRoute
   '/recipes/$recipeId': typeof RecipesRecipeIdRoute
+  '/pages': typeof PagesIndexRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -124,7 +138,9 @@ export interface FileRoutesByTo {
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/ingredients/$ingredientId': typeof IngredientsIngredientIdRoute
+  '/pages/$slug': typeof PagesSlugRoute
   '/recipes/$recipeId': typeof RecipesRecipeIdRoute
+  '/pages': typeof PagesIndexRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -142,7 +158,9 @@ export interface FileRoutesById {
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/ingredients/$ingredientId': typeof IngredientsIngredientIdRoute
+  '/pages/$slug': typeof PagesSlugRoute
   '/recipes/$recipeId': typeof RecipesRecipeIdRoute
+  '/pages/': typeof PagesIndexRoute
   '/demo/api/mcp-todos': typeof DemoApiMcpTodosRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
@@ -161,7 +179,9 @@ export interface FileRouteTypes {
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
     | '/ingredients/$ingredientId'
+    | '/pages/$slug'
     | '/recipes/$recipeId'
+    | '/pages'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -178,7 +198,9 @@ export interface FileRouteTypes {
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
     | '/ingredients/$ingredientId'
+    | '/pages/$slug'
     | '/recipes/$recipeId'
+    | '/pages'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -195,7 +217,9 @@ export interface FileRouteTypes {
     | '/demo/mcp-todos'
     | '/demo/tanstack-query'
     | '/ingredients/$ingredientId'
+    | '/pages/$slug'
     | '/recipes/$recipeId'
+    | '/pages/'
     | '/demo/api/mcp-todos'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
@@ -213,7 +237,9 @@ export interface RootRouteChildren {
   DemoMcpTodosRoute: typeof DemoMcpTodosRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
   IngredientsIngredientIdRoute: typeof IngredientsIngredientIdRoute
+  PagesSlugRoute: typeof PagesSlugRoute
   RecipesRecipeIdRoute: typeof RecipesRecipeIdRoute
+  PagesIndexRoute: typeof PagesIndexRoute
   DemoApiMcpTodosRoute: typeof DemoApiMcpTodosRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
   DemoApiTqTodosRoute: typeof DemoApiTqTodosRoute
@@ -241,11 +267,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pages/': {
+      id: '/pages/'
+      path: '/pages'
+      fullPath: '/pages'
+      preLoaderRoute: typeof PagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recipes/$recipeId': {
       id: '/recipes/$recipeId'
       path: '/recipes/$recipeId'
       fullPath: '/recipes/$recipeId'
       preLoaderRoute: typeof RecipesRecipeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pages/$slug': {
+      id: '/pages/$slug'
+      path: '/pages/$slug'
+      fullPath: '/pages/$slug'
+      preLoaderRoute: typeof PagesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ingredients/$ingredientId': {
@@ -341,7 +381,9 @@ const rootRouteChildren: RootRouteChildren = {
   DemoMcpTodosRoute: DemoMcpTodosRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
   IngredientsIngredientIdRoute: IngredientsIngredientIdRoute,
+  PagesSlugRoute: PagesSlugRoute,
   RecipesRecipeIdRoute: RecipesRecipeIdRoute,
+  PagesIndexRoute: PagesIndexRoute,
   DemoApiMcpTodosRoute: DemoApiMcpTodosRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
   DemoApiTqTodosRoute: DemoApiTqTodosRoute,
